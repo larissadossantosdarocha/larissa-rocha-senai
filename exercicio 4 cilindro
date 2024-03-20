@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+#include<locale.h>
+
+int main() {
+	setlocale(LC_ALL,"");
+    float raio, altura, area_base, area_lateral, area_total, volume;
+    float PI = 3.14159;
+
+    // Solicita a entrada do usuário para o raio e a altura do cilindro
+    printf("Digite o raio do cilindro (em cm): ");
+    scanf("%f", &raio);
+
+    printf("Digite a altura do cilindro (em cm): ");
+    scanf("%f", &altura);
+
+    // Calcula a área da base do cilindro (área do círculo)
+    area_base = PI * pow(raio, 2);
+
+    // Calcula a área lateral do cilindro
+    area_lateral = 2 * PI * raio * altura;
+
+    // Calcula a área total do cilindro
+    area_total = 2 * area_base + area_lateral;
+
+    // Calcula o volume do cilindro
+    volume = area_base * altura;
+
+    // Exibe a área e o volume do cilindro na tela
+    printf("Área da base do cilindro: %.2f cm^2\n", area_base);
+    printf("Área lateral do cilindro: %.2f cm^2\n", area_lateral);
+    printf("Área total do cilindro: %.2f cm^2\n", area_total);
+    printf("Volume do cilindro: %.2f cm^3\n", volume);
+
+    return 0;}
