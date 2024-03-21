@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include<locale.h>
+
+int main() {
+	setlocale(LC_ALL,"");
+	char nome_mercadoria[50];
+	float preco, novo_preco;
+	
+	//solicitar a entrada do usuario para o nome e o preço da mercadoria
+	printf("digite o nome da mercadoria: ");
+	scanf("%s", nome_mercadoria);
+	
+	printf("digite o preço da mercadoria: R$ ");
+	scanf("%f", &preco);
+	
+	//calcula o novo preco com o aumento de 5%
+	novo_preco = preco * 1.05;
+	
+	//exibe o nome da mercadoria, e o seu novo preço na tela
+	printf("nome da mercadoria: %s\n", nome_mercadoria);
+	printf("novo preço da mercadoria: R$ %.2f\n", novo_preco);
+
+    return 0;}
