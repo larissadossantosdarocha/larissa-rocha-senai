@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+    int ganhos, gastos, saldo;
+    char nome_pessoa[50];
+    
+    printf("digite o nome da pessoa:");
+    scanf("%s",nome_pessoa);
+    
+    printf("digite quanto de ganhos que obteve:");
+    scanf("%d", &ganhos);
+    
+    printf("digite quanto de gastos obteve:");
+    scanf("%d", &gastos);
+    
+    saldo=ganhos-gastos;
+    
+    printf("o saldo e : %d", saldo);
+    if(saldo>=200){
+        printf("tenho saldo");
+    }else{
+        printf("pouco saldo");
+        
+    }
+    return 0;
+}
