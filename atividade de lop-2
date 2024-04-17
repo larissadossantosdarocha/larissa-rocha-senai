@@ -1,0 +1,26 @@
+2- ler ano de nascimento para poder votar
+
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    
+   int ano_nascimento;
+   char nome[50];
+    
+   printf("digite o ano de nascimento:");
+   scanf("%d", &ano_nascimento);
+   
+   printf("Digite o nome da pessoa: ");
+   scanf("%s", nome);
+   
+   
+   if (2024-ano_nascimento>=16) {
+   printf("pode votar");
+   
+   } else {
+   printf("não pode votar");
+    
+   }    
+     return 0;
+}
