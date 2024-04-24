@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(){
+    int colocação;
+    for(colocação =1 ; colocação <=10 ; colocação++) {
+    printf("%d°colocado\n",colocação);
+}  
+
+ return 0;
+ 
+ }
