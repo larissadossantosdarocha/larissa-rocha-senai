@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    int Hello_world= 1 ;
+           
+            while(Hello_world< 12)
+            {
+            printf("Hello_world %d\n  ", Hello_world);
+            Hello_world +=1;
+            }
+         
+    return 0;
+}
