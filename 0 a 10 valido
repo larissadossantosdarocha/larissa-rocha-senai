@@ -1,4 +1,5 @@
-Nota de 0 a 10 que mostre uma mensagem caso o valor seja invalido
+0 a 10 valido caso seja invalido peça uma mensagem ate ser valido
+
 
 #include <iostream>
 
@@ -13,6 +14,9 @@ int nota;
    printf("acesso permitido");
    else 
    printf("acesso negado");
+   
+    printf("digite outra nota:");
+   scanf("%d", &nota);
    
     return 0;
 }
