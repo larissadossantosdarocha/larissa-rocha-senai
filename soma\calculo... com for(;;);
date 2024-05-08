@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main()
+{
+     int soma, subtração, multiplicação, divisão, calculo;
+    int a, b, c, d;
+    
+    for(;;){
+        
+    printf("digite uma opção de 1 a 4 sendo:\n");
+    printf("1-soma\n");
+    printf("2-subtração\n");
+    printf("3-multiplicação\n");
+    printf("4-divisão\n");
+    
+    scanf("%d", &calculo);
+    printf("digite o 1ºnº");
+    scanf("%d", &a);
+    printf("digite o 2ºnº");
+    scanf("%d", &b);
+    printf("digite o 3ºnº");
+    scanf("%d", &c);
+    printf("digite o 4ºnº");
+    scanf("%d", &d);
+    
+    switch(calculo){
+        case 1:
+         calculo = a + b + c + d;
+        printf("a soma é:%.2d\n", calculo);
+        
+    }
+    
+     switch(calculo){
+        case 2:
+         calculo = a - b - c - d;
+        printf("a subtração é:%.2d\n", calculo);
+        
+    } 
+    switch(calculo){
+        case 3:
+         calculo = a * b * c * d;
+        printf("a multiplicação é:%.2d\n", calculo);
+        
+    }  
+    switch(calculo){
+        case 4:
+         calculo = a / b /c / d;
+        printf("a divisão é: %.2d\n", calculo);
+    
+     break;
+
+    }  
+
+    }
+    return 0;
+}
