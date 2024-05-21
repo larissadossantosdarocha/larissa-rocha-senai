@@ -1,0 +1,31 @@
+int main()
+{
+    int contador = 0;
+    float numero, soma;
+    
+    
+    printf("digite um numero mair que zero(ou 0 para sair): ");
+    scanf("%f", &numero);
+    
+    while(numero !=0)
+    {
+        if(numero > 0)
+    {
+    contador++;
+    soma += numero;
+} else if (numero < 0) {
+    printf("digite apenas numero maior que zero \n");
+}
+    printf("digite outro numero: ");
+    scanf("%f", &numero);
+    }
+    
+    if (contador ==0) {
+        printf("nenhum numero valido foi digitado\n");
+    } else {
+        float media= soma, contador;
+        printf("foi entrado %f numero\n", contador);
+        printf("a media dos numeros e: %2f\n", media);
+    }
+    return 0;
+}
