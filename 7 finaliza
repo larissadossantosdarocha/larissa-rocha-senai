@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(){
+    int numero;
+    for(;;){
+        printf("digite um numero:");
+        scanf("%d", &numero);
+        
+        if(numero>=7){
+            break;
+        }
+        else{
+            printf("numero incorreto\n");
+            
+        }
+    }
+    printf("numero correto\n");
+    
+    printf("finalizado");
+    
+    return 0;
+}
