@@ -1,0 +1,62 @@
+//importação 
+const express = require ("express");
+
+//corpo 
+const raiz = (req, res)=>{
+    res.send("Back End Ativo");
+}
+
+const interacao = (req, res)=>{
+    let nome = req.query.nome;
+    let idade = req.query.idade;
+    res.send(`Ola ${nome}, voce tem ${idade} anos`);
+}
+
+
+
+
+//configuração HTTP 
+const app = express();
+app.get("/", raiz);
+app.get("/interacao", interacao);
+
+//teste no console 
+app.listen(3000, ()=>{
+    console.log("respondendo na porta 3000");
+})
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://localhost:3000/interacao">
+
+<input type="text" name="nome" placeholder="Digite seu nome:">
+<input type="number" name="idade" placeholder="Digite sua idade:">
+<button type="submit">Enviar</button>
+
+    </form>
+</body>
+</html>
+
+
+
+
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
