@@ -1,0 +1,120 @@
+index.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>
+        <input type="number" id="numero1" placeholder="Digite um número">
+        <input type="number" id="numero2" placeholder="Digite o segundo número">
+        <input type="submit" value="Calcular" id="btncadastrar" onclick="btncadastrar()">
+        <p id="mensagem">A sua operação ira aparecer aqui!!</p>
+
+        <p></p>
+
+        <input type="number" id="numero3" placeholder="Digite um número">
+        <input type="number" id="numero4" placeholder="Digite o segundo número">
+        <input type="submit" value="Calcular1" id="btncadastrar1" onclick="btncadastrar1()">
+        <p id="mensagem1">A sua operação ira aparecer aqui!!</p>
+
+        <p></p>
+
+        <input type="number" id="numero5" placeholder="Digite um número">
+        <input type="number" id="numero6" placeholder="Digite o segundo número">
+        <input type="submit" value="Calcular2" id="btncadastrar2" onclick="btncadastrar2()">
+        <p id="mensagem2">A sua operação ira aparecer aqui!!</p>
+
+        <p></p>
+
+        <input type="number" id="numero7" placeholder="Digite um número">
+        <input type="number" id="numero8" placeholder="Digite o segundo número">
+        <input type="submit" value="Calcular3" id="btncadastrar3" onclick="btncadastrar3()">
+        <p id="mensagem3">A sua operação ira aparecer aqui!!</p>
+
+        <p></p>
+
+        <input type="number" id="numero9" placeholder="Digite um número">
+        <input type="number" id="numero10" placeholder="Digite o segundo número">
+        <input type="submit" value="Calcular4" id="btncadastrar4" onclick="btncadastrar4()">
+        <p id="mensagem4">A sua operação ira aparecer aqui!!</p>
+
+</body>
+<script src="scriptt.js"></script>
+</html>
+
+
+
+
+scriptt.js
+
+
+function btncadastrar(){
+    var numero1 = Number(document.getElementById("numero1").value);
+    var numero2 = Number(document.getElementById("numero2").value);
+    var mensagem = document.querySelector("#mensagem");
+    let conta;
+
+    conta = numero1 + numero2;
+   
+    mensagem.innerHTML = `
+    <p>A resposta é: ${conta}</p> 
+    `
+
+}
+
+function btncadastrar1(){
+    var numero3 = Number(document.getElementById("numero3").value);
+    var numero4 = Number(document.getElementById("numero4").value);
+    var mensagem1 = document.querySelector("#mensagem1");
+    let conta1;
+
+    conta1 = numero3 - numero4;
+   
+    mensagem1.innerHTML = `
+    <p>A resposta é: ${conta1}</p> 
+    `
+
+} 
+
+function btncadastrar2(){
+    var numero5 = Number(document.getElementById("numero5").value);
+    var numero6 = Number(document.getElementById("numero6").value);
+    var mensagem2 = document.querySelector("#mensagem2");
+    let conta2;
+
+    conta2 = numero5 * numero6;
+   
+    mensagem2.innerHTML = `
+    <p>A resposta é: ${conta2}</p> 
+    `
+
+}
+
+function btncadastrar3(){
+    var numero7 = Number(document.getElementById("numero7").value);
+    var numero8 = Number(document.getElementById("numero8").value);
+    var mensagem3 = document.querySelector("#mensagem3");
+    let conta3;
+
+    conta3 = numero7 / numero8;
+   
+    mensagem3.innerHTML = `
+    <p>A resposta é: ${conta3}</p> 
+    `
+}
+
+function btncadastrar4(){
+    var numero9 = Number(document.getElementById("numero9").value);
+    var numero10 = Number(document.getElementById("numero10").value);
+    var mensagem4 = document.querySelector("#mensagem4");
+    let conta4;
+
+    conta4 = numero9 ** numero10;
+   
+    mensagem4.innerHTML = `
+    <p>A resposta é: ${conta4}</p> 
+    `
+}
