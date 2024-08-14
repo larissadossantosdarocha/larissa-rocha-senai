@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="div1">
+            <h1>Cadastre um autor</h1>
+        </div>
+    </div>
+
+<div class="container_formulrio">
+
+    <form action="http://localhost:3000/livros" method="post">
+
+        <input type="text" name="autorLivro" placeholder="Digite o seu nome: ">
+        <br>
+        <input type="text" name="descricaoLivro" placeholder="Descrição do Livro: ">
+        <br>
+        <input type="submit" value="Enviar" id="botao">
+   
+   </form>
+
+</div>
+
+
+    
+
+</body>
+</html>
