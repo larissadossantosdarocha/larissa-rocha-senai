@@ -1,0 +1,208 @@
+API
+(terminal: .cd Back
+.npm init
+.npm i express cors mysql 
+.npm install body-parser
+.node api.js)!!!!!!!
+
+
+const express = require('express');
+const porta = 3000;
+const url = 'http://localhost:3000/';
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mysql = require('mysql');
+
+
+
+
+//conectar com o banco de dados 
+const con = mysql.createConnection({
+    user: 'root',
+    host: 'localhost',
+    database: 'academia'
+})
+
+const create = (req, res) => {
+    let dadosNome= req.body.dadosNome
+    let dadosRG = req.body.dadosRG;
+    let dadosCPf = req.body.dadosCPf;
+    let dadosTelefone = req.body.dadosTelefone;
+    let dadosEndereco = req.body.dadosEndereco;
+    let dadosformadePagamento = req.body.dadosformadePagamento;
+
+    let query = `INSERT INTO cadastrar(dadosNome, dadosRG, dadosCPF, dadosTelefone, dadosEndereco, dadosfomardepagamento) VALUE`;
+    query += `('${dadosNome}','${dadosRG}','${dadosCPf}','${dadosTelefone}','${dadosEndereco}','${dadosformadePagamento}');`;
+
+    con.query(query, (err, result) => {
+        if (err) {
+            res.redirect("http://127.0.0.1:5500/index.html");
+        } else {
+            res.redirect("http://127.0.0.1:5500/index.html");
+        }
+    });
+
+
+}
+
+const read = (req, res) => {
+    con.query("SELECT * FROM cadastrar", (err, result) => {
+        if (err) {
+            res.status(500).json(err)
+        } else {
+            res.json(result)
+        }
+    })
+}
+
+
+
+//esse teste, ira aparecer na pagina web
+const teste = (req, res) => {
+    res.send("Api respondendo");
+}
+
+//configuração da saida para o front-end
+//para o teste funcionar
+const app = express();
+app.use(express.json());
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }))
+
+
+//rotas de saida
+app.get("/", teste);
+app.post("/cadastrar", create);
+app.get("/cadastrar", read);
+
+//teste no console 
+app.listen(3000, () => {
+    console.log("Servidor respondendo na porta: ", porta);
+})
+
+
+(ERRO>HTML
+nada nele )!!!!!!!
+
+
+(INDEX>HTML)!!!!!
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="div1">
+            <h1>Cadastrar</h1>
+        </div>
+    </div>
+
+<div class="container_formulrio">
+
+    <form action="http://localhost:3000/cadastrar" method="post">
+
+        <input type="text" name="dadosNome" placeholder="Digite o seu nome: ">
+        <br>
+        <input type="text" name="dadosRG" placeholder="Digite o seu rg: ">
+        <br>
+        <input type="text" name="dadosCPF" placeholder="Digite o seu cpf: ">
+        <br>
+        <input type="text" name="dadosTelefone" placeholder="Digite o seu telefone: ">
+        <br>
+        <input type="text" name="dadosEndereco" placeholder="Digite o seu endereço: ">
+        <br>
+        <input type="text" name="dadosformadePagamento" placeholder="Forma de pagamento: ">
+        <br>
+        <input type="submit" value="Enviar" id="botao">
+   
+   </form>
+
+</div>
+
+
+
+(BD>SQL)!!!!!!!!
+
+
+create database academia;
+
+use academia;
+
+create table cadastrar(
+    id integer primary key auto_increment,
+    dadosNome varchar(100) not null,
+    dadosRG varchar(20) not null,
+    dadosCPF varchar(15) not null,
+    dadosTelefone varchar(20) not null,
+    dadosEndereco varchar(250) not null,
+    dadosfomadadePagamento varchar(100) not null
+);
+
+
+
+
+(STYLE>CSS)!!!!!
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(255, 255, 255);
+}
+
+.container{
+    width: 100%;
+    background: rgb(255, 136, 136);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div1{
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container_formulrio{
+    width: 90%;
+    height: 550px;
+    background:rgb(255, 136, 136);
+    border: 10px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+input{
+    width: 250px;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border-radius: 15px;
+    border: nome;
+}
+
+#botao{
+    width: 100px;
+    background: rgb(255, 255, 255);
+    color:rgb(255, 136, 136);
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+}
+
+
